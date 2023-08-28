@@ -1,0 +1,64 @@
+html, body{box-sizing: border-box;}
+
+h1{
+    font-size: 35px;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#left{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#left p{
+    margin: 0 15%;
+    text-align: justify;
+}
+
+#right{
+    color: white;
+    flex: 1;
+    background-color:var(--secon);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+
+#right h1{
+    text-align: center;
+    width: 80%;
+}
+
+#grid{
+    display: grid;
+    width: fit-content;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 50px;
+    justify-content: center;
+}
+
+#grid img{
+    text-align: center;
+    width: 120px;
+}
+
+#title, #desc{
+    text-align: center;
+    margin: 10px 50px;
+}
+
+#desc{
+    height: 60px;
+}

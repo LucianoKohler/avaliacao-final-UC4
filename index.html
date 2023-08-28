@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/nav.css">
+    <link rel="stylesheet" href="assets/css/index.css">
     <title>Avaliação</title>
 </head>
 <body>
@@ -14,5 +15,69 @@
         <span><a href="../pages/ghpages.html">GitHub Pages</a></span>
         <span><a href="../pages/portfolio.html">Portfolio</a></span>
     </nav>
+    <main>
+        <section id="left">
+            <h1>Saudações!</h1>
+            <p>Este site foi produzido com o intuito de demonstrar os conhecimentos adquiridos durante as aulas de publicação de aplicações web com o professor Renan Ponick. Para navegar pelo site, utilize a barra de navegação no topo da página, veja para aonde cada um dos itens levará: </p>
+            <ul>
+                <li>Home: Página atual</li>
+                <li>Hospedagem: Entenda sobre hospedagem, e seus dados técnicos, além de como fazer para hospedar um site.s</li>
+                <li>Git e GitHub: Informações sobre os softwares e como configurar chaves SSH/clonar repositórios</li>
+                <li>GitHub Pages: Dados sobre como usar a ferramenta para hospedação de sites estáticos e dinâmicos</li>
+                <li>Portfolio: Currículo pessoal com minhas competências e dados profissionais.</li>
+
+                <!-- Conterá informações sobre hospedagem, como, o que é necessário para hospedar um software, possíveis lugares para isso, custos envolvidos. Lembre-se de explicar também o que é DNS e SEO. -->
+            </ul>
+        </section>
+        <section id="right">
+            <h1>Tecnologias Relevantes Utilizadas no Projeto:</h1>
+            <div id="grid">
+                <img onmouseover="describe('web')" src="assets/images/carousel/HTML_CSS_JS.png" alt="">
+                <img onmouseover="describe('vscode')" src="assets/images/vscode.png" alt="">
+                <img onmouseover="describe('git')" src="assets/images/git.png" alt="">
+                <img onmouseover="describe('github')" src="assets/images/github.png" alt="">
+                <img onmouseover="describe('fontawesome')" src="assets/images/fontawesome.png" alt="">
+                <img onmouseover="describe('googlefonts')" src="assets/images/googlefonts.png" alt="">
+            </div>
+            <div>
+                <h2 id="title">Passe o mouse</h2>
+                <p id="desc">Nos ícones para uma descrição deles</p>
+            </div>
+        </section>
+    </main>
+    <script>
+        function describe(item){
+            let Title = document.getElementById("title");
+            let Desc = document.getElementById("desc");
+            
+            switch(item){
+                case 'web':
+                    Title.innerText = "HTML, CSS e JS";
+                    Desc.innerText = "Linguagens WEB utilizadas, sem o uso de bibliotecas de desenvolvimento como React, Vue, etc...";
+                    break;
+                case 'vscode':
+                    Title.innerText = "VSCode";
+                    Desc.innerText = "IDE utilizada durante o desenvolvimento, escolhida por experiência e gosto próprio.";
+                    break;
+                case 'git':
+                    Title.innerText = "Git";
+                    Desc.innerText = "Ferramenta de versionamento local usada para salvar o progresso de codificação do projeto.";
+                    break;
+                case 'github':
+                    Title.innerText = "GitHub";
+                    Desc.innerText = "Usado junto com Git para salvar os versionamentos locais na nuvem e para hospedar o site via Github Pages";
+                    break;
+                case 'fontawesome':
+                    Title.innerText = "FontAwesome";
+                    Desc.innerText = "Biblioteca de ícones gratuita para adição de ícones nas páginas";
+                    break;
+                case 'googlefonts':
+                    Title.innerText = "Google Fonts";
+                    Desc.innerText = "Site usado para encontrar e importar a atual fonte: Rubik";
+                    break;
+
+            }
+        }
+    </script>
 </body>
 </html>
