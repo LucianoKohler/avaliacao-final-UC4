@@ -1,18 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/nav.css">
+    <link rel="stylesheet" href="../assets/css/ghub.css">
     <title>Git e Github</title>
 </head>
+
 <body>
     <nav>
         <span><a href="../index.html">Home</a></span>
         <span><a href="../pages/hospedagem.html">Hospedagem</a></span>
-        <span><a href="../pages/ghub.html">Git e GitHub</a></span>
+        <span><a href="../pages/ghub.html" class="nav-selected">Git e GitHub</a></span>
         <span><a href="../pages/ghpages.html">GitHub Pages</a></span>
         <span><a href="../pages/portfolio.html">Portfolio</a></span>
     </nav>
+    <div id="container">
+        <h1>Git e GitHub</h1>
+        <div id="softwares">
+            <div class="block">
+                <img src="../assets/images/git.png" alt="Logo do Git" height="150">
+                <p><b>Git</b> é uma ferramenta de <b>versionamento</b> que ajuda a salvar seu arquivo em diferentes
+                    estados e linhas do tempo (branches) em forma de <b>repositórios</b>.</p>
+            </div>
+            <div class="block">
+                <p><b>Git</b> e <b>GitHub</b>, juntos, são o prato cheio, não só do programador, mas de qualquer um que
+                    precisa salvar diferentes versões de seu documento ou projeto.</p>
+            </div>
+            <div class="block">
+                <img src="../assets/images/github.png" alt="Logo do GitHub" height="150">
+                <p><b>GitHub</b> é uma <b>plataforma</b> online onde é possível jogar seus repositórios para a
+                    <b>nuvem</b>, seja para compartilhamento ou acesso em outro dispositivo.
+                </p>
+            </div>
+        </div>
+
+        <h1>Configurando sua conta com o Git Bash</h1>
+        <p>Antes de usar sua conta, instale o Git e o GitBash (terminal do Git), e <b>cadastre suas credenciais</b>,
+            para isso, use as linhas de código a seguir: </p>
+        <div class="terminal">
+            git config --global user.name "Seu nome" <span class="comment">Para cadastrar seu nome</span><br>
+            git config --global user.email "Seu email" <span class="comment">Para cadastrar seu email</span><br>
+            git config --global core.editor "SUA IDE" <span class="comment">Para mostrar em que IDE você programa
+                (opcional)</span><br>
+        </div>
+
+        <h1>Criando um repositório local</h1>
+
+        <p>Com suas credenciais salvas, ainda no GitBash, siga as instruções para criar seu repositório: </p>
+        <ul>
+            <li>Abra a pasta onde você quer salvar seu repositorio e escreva <span
+                    class="terminal">mkdir "nome da pasta"</span> para criar uma pasta.</li>
+            <li>Entre nela com o comando <span class="terminal">cd "nome da pasta"</span></li>
+            <li>Use o comando <span class="terminalt-b">git init</span> para inicializar o repositório;
+            </li>
+            <li>Por fim, use a linha <span class="terminal">code .</span> para abrir essa pasta pelo seu
+                editor de código.</li>
+            <li><b style="color: red;">NOTA IMPORTANTE:</b> Se o repositório JÁ existe no GitHub, apenas use o comando <span class="terminal">git clone "link HTTPS/SSH do projeto"</span> para puxá-lo para sua máquina</li>
+        </ul>
+
+        <h1>Comandos essenciais para usar o Git</h1>
+        <p>O manuseio do git é feito por meio do GitBash ou do seu terminal da IDE, no caso do VSCode, há uma UI que
+            facilita o processo, mas se esse não for o caso, veja uma lista de comandos importantes para usar a
+            ferramenta: </p>
+
+        <div class="terminal">
+            git status <br>
+            <span class="comment">Indica em que branch você está</span> <br>
+            <span class="comment">Os arquivos modificados/adicionados/deletados</span> <br>
+            <span class="comment">E se alguma coisa precisa ser adicionada ao projeto</span> <br>
+
+            <br>git add "filename ou ." <br>
+            <span class="comment">Adiciona arquivos novos da pasta para o repositório</span> <br>
+
+            <br>git restore --staged "filename ou ."<br>
+            <span class="comment">Usado para reverter o git add</span> <br>
+
+            <br>git branch "branchname"<br>
+            <span class="comment">Cria um branch novo</span> <br>
+
+            <br>git checkout "branchname"<br>
+            <span class="comment">Entra no branch escolhido</span> <br>
+
+            <br>git checkout -b "branchname"<br>
+            <span class="comment">Cria um novo branch e entra nele</span><br>
+
+            <br>git commit -m "description"<br>
+            <span class="comment">Cria uma versão do código, como um "save em um jogo" no repositório local, junto com uma descrição</span><br>
+
+            <br>git push<br>
+            <span class="comment">Envia as novas alterações/commits do repositório local para o repositório local</span><br>
+
+            <br>git branch -D "branchname"<br>
+            <span class="comment">Deleta um branch escolhido</span><br>
+
+            <br>git fetch<br>
+            <span class="comment">Puxa as novas alterações/commits enviados ao repositório remoto para seu repositório local mas não altera seu código</span><br>
+
+            <br>git pull<br>
+            <span class="comment">Puxa as novas alterações/commits enviados ao repositório remoto para seu repositório local</span><br>
+            <span class="comment">E altera seu código para a versão mais recente puxada pelo comando</span>
+
+        </div>
+
+        <h1>Chaves SSH</h1>
+        <p>Para evitar que pessoas se passem por você, cadastrar uma <b>chave SSH</b> na sua máquina pode ser uma boa opção para proteger seus repositórios, para cadastrar uma chave (lembranado que isso deve ser feito toda vez que você trocar de máquina), siga as instruções:</p>
+
+        <ul>
+            <li>Abra seu Git Bash e verifique se já há uma chave SSH com o comando <span class="terminal">ls -al ~/.ssh</span> para ver se já há chaves cadastradas;</li>
+            <li>Se não houver uma, crie com o comando <span class="terminal"> ssh-keygen -t ed25519 -C "email@exemplo.com"</span> (O código bizarro é padrão do GitHub);</li>
+            <li>Inicialize um agente (robozinho de SSH) com o comando <span class="terminal"> eval "$(ssh-agent -s)"</span>;</li>
+            <li>Dê a chave SSH ao robozinho com a linha de código <span class="terminal">ssh-add ~/.ssh/id_ed25519</span>;</li>
+            <li>Agora, utilize o comando clip para copiar para a área de transferência, sua chave SSH: <span class="terminal">clip < ~/.ssh/id_ed25519.pub</span>;</li>
+            <li>Com a chave em mãos, logue sua conta no GitHub e abra as settings > SSH and GPG keys;</li>
+            <li>Clique no botão de adicionar uma chave SSH, dê um nome a essa chave (ex: casa, trabalho...) para identificação. Em seguida, cole o código previamente copiado na caixa de texto grande.</li>
+            <li>Por fim, use <span class="terminal">ssh -T git@github.com</span> no bash para conectar tudo e digite yes para confirmar a conexão, está feito!</li>
+        </ul>
+
+        <h1>Empurrando um repositório local para o GitHub</h1>
+        <p>Agora que salvamos tudo que queríamos <b>localmente</b>, queremos enviar esse repositório para a <b>nuvem</b> e acessá-lo online, para isso, usamos o GitHub, que complementa o trabalho do Git, que, no meu caso, foi feito usando o Visual Studio Code: </p>
+        
+        <ul>
+            <li>Com o arquivo pronto, abra o terminal e certifique-se de que ele está aberto na pasta dos seus arquivos;</li>
+            <li>Escreva no terminal <span class="terminal">git init</span> para inicializar um repositório Público na sua máquina;</li>
+            <li>Digite <span class="terminal">git add .</span> para salvar arquivos novos e/ou alterações no repositório local;</li>
+            <li>Em seguida, dê o clássico commit com o comando <span class="terminal">git commit -m "Descrição do commit"</span> para salvar essa versão do código no repositório local;</li>
+            <li>Por fim, no menu "Source Control" no VSC, clique no botão para enviar o repositório local para o remoto;</li>
+            <li>Em seguida, fique no troca troca de requisições de login entre o VSC e o GitHub, e por fim, escolha se o repositório será privado ou público;</li>
+            <li>Para enviar futuras mudanças no projeto, utilize o comando <span class="terminal">git push</span>, e é isso aí!</li>
+        </ul>
+
+    </div>
 </body>
+
 </html>
