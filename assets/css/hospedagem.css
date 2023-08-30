@@ -1,5 +1,27 @@
-.card{
-  padding: 10px;
+.question {
+  font-weight: bold;
+}
+
+.answer {
+  list-style-type: none;
+  margin: 0;
+  font-style: italic;
+}
+
+.answer::before {
+  content: "R: ";
+}
+
+#images {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.card {
+  padding: 10px 20px;
   background-color: var(--secon);
   color: white;
   height: 350px;
@@ -7,20 +29,33 @@
   position: fixed;
   border-radius: 15px 15px 0 0;
   transition: .5s all ease-in-out;
+  text-align: justify;
 }
 
-.card h2{
+.arrow {
+  font-size: 20px;
+  position: relative;
+  left: 440px;
+  bottom: 25px;
+}
+
+
+.card h2 {
   margin: 0;
   text-align: center;
 }
 
-.card:nth-child(1){
+.card:nth-child(1) {
   bottom: -320px;
-  right:30px;
+  right: 30px;
 }
 
-.card:nth-child(1):hover, .card:nth-child(2):hover{bottom: 0px;}
-.card:nth-child(2){
+.card:nth-child(1):hover,
+.card:nth-child(2):hover {
+  bottom: 0px;
+}
+
+.card:nth-child(2) {
   bottom: -320px;
   right: 530px;
 }
