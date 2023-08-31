@@ -39,6 +39,12 @@ body {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 1);
 }
 
+@media (max-width: 1050px) {
+    #container{
+        width: 100%;
+    }
+}
+
 a {
     position: relative;
     color: black;
@@ -143,10 +149,6 @@ div.terminal {
 
 .comment {
     color: #bdc4cc;
-}
-
-.comment::before {
-    content: "#";
 }
 
 li {
