@@ -1,32 +1,11 @@
+.block{padding: 30px;}
+.block img{height: 150px;}
+.block:nth-child(1){border-right: 1px solid black;}
+.block:nth-child(3){border-left: 1px solid black;}
+
+
 #softwares{
     display: flex;
     text-align: center;
     align-items: center;
-}
-
-.terminal{
-    color: white;
-    border-radius: 10px;
-    background-color: #272b33;
-    font-family: SpaceMono;
-}
-
-span.terminal{
-    padding: 5px 10px;
-}
-
-div.terminal{
-    padding: 15px;
-}
-
-.comment{
-    color: #bdc4cc;
-}
-
-.comment::before{
-    content: "#";
-}
-
-li{
-    line-height: 40px;
 }
