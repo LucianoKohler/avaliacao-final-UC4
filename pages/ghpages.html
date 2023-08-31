@@ -30,21 +30,21 @@
                 <img src="../assets/images/githubpages.png" alt="" height="200">
             </aside>
         </header>
-        <p style="text-align: center;">Mas, antes de ir para a prática, precisamos entender a diferença de um site
+        <p style="text-align: center;">Antes de ir para a prática, precisamos entender a diferença de um site
             estático e um site dinâmico: </p>
         <div class="flex-2">
             <div>
                 <h1>Site Estático</h1>
                 <p>Sites estáticos tem um conteúdo que não muda (a não ser que você mude diretamente pelo código), e
                     todo o processamento de informações é feito <b>na máquina do usuário</b>, a maioria dos sites é
-                    estática, podendo dar de exemplo: Portfolios, Sites de informações sobre empresas/instituições, ou
+                    estático, podendo dar de exemplo: Portfolios, Sites de informações sobre empresas/instituições, ou
                     álbuns de fotos online.</p>
             </div>
             <div>
                 <h1>Site Dinâmico</h1>
                 <p>Sites dinâmicos podem mudar seu conteúdo sem a interação do desenvolvedor e normalmente têm maior
                     complexidade, além de um <b>lado do servidor</b>, que troca informações com o usuário em tempo real,
-                    normalmente esse servidor é feito com PHP, Node.Js ou Python, mas não se restrinja só a eles!.</p>
+                    normalmente esse servidor é feito com PHP, Node.Js ou Python, mas não se restrinja só a eles!</p>
             </div>
         </div>
         <p>Com essas informações em mente, classifique seu site como estático ou dinâmico e siga os passos dependendo da
@@ -53,12 +53,12 @@
         <p>Sorte sua, é muito fácil!</p>
         <ul>
             <li>Abra o repositório a ser hospedado pelo Github;</li>
-            <li>Na barra de navegação do repositório localizada em cima do código e clique em settings/configurações;
+            <li>Na barra de navegação do repositório localizada em cima do código e clique em configurações;
             </li>
             <li>Na aba que apareceu à esquerda, clique no botão <b>Pages</b>;</li>
-            <li>Deixe a opção de dar <b>deploy</b>(veja o card na parte de baixo da página) por uma branch (valor
-                padrão), e escolha uma branch para dar deploy no seu site</li>
-            <li>Espere até que a plataforma hospede seu projeto</li>
+            <li>Deixe a opção de dar <b>deploy</b> (veja o card em roxo na parte de baixo da página) por uma branch (valor
+                padrão), e escolha uma branch para dar deploy no seu site;</li>
+            <li>Espere até que a plataforma hospede seu projeto;</li>
             <li>Clique no link gerado na parte superior da página e aproveite seu site diretamente na internet!</li>
         </ul>
         <h1>Hospedando sites Dinâmicos</h1>
@@ -97,14 +97,16 @@ jobs: <span class="comment">#tarefas a fazer</span>
                     github_token: ${{ secrets.GITHUB_TOKEN }}
                     publish_dir: ./build</pre>
         <ul>
-            <li>Agora, no arquivo</li>
+            <li>Agora, na pasta do projeto, acesse o arquivo <span class="terminal">package.json</span> (que guarda informações sobre o projeto, como dependências e preferências)</li>
+            <li>adicione abaixo da versão do projeto, a linha <span class="terminal">"homepage": "***/"</span>, onde *** é o que quer que esteja escrito na chave <span class="terminal">"name"</span> (não esqueça da barra no final!)</li>
             <li>Com as alterações feitas, acesse no seu repositório: <span class="terminal">settings>actions>general</span> e, ao fim da página:</li>
             <ul>
                 <li>marque a checkbox <span class="terminal">Allow GitHub Actions to create and approve pull requests</span>;</li>
-                <li>Marque o radio (checkbox redonda) <span class="terminal">Read and write permissions</span></li>
+                <li>Marque o radio (checkbox redonda) <span class="terminal">Read and write permissions</span>;</li>
             </ul>
-            <li>Clique em save</li>
-            <li>Agora, acesse no seu repositório o menu actions e veja se o deploy foi bem sucedido</li>
+            <li>Clique em save;</li>
+            <li>Agora, acesse no seu repositório o menu actions e veja o deploy sendo feito automaticamente!</li>
+            <li><b style="color: red;">NOTA IMPORTANTE: </b>Se a ação não ser rodada, vá para a aba actions no repositório e rode as ações falhadas novamente.</li>
         </ul>
     </div>
     <div id="cards">

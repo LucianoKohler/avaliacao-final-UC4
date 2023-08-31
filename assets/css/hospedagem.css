@@ -1,18 +1,19 @@
-.flex{
+.flex {
   display: flex;
   text-align: justify;
   gap: 50px;
+  flex-wrap: wrap;
 }
 
-.flex p:nth-child(2){
+.flex p:nth-child(2) {
   text-indent: 50px;
 }
 
-.flex h3{
+.flex h3 {
   text-align: center;
 }
 
-.flex div{
+.flex div {
   flex: 1;
 }
 
@@ -46,8 +47,12 @@
   width: 450px;
   position: fixed;
   border-radius: 15px 15px 0 0;
-  transition: .5s all ease-in-out;
+  transition: 0.5s all ease-in-out;
   text-align: justify;
+}
+
+.card ul li {
+  line-height: normal !important;
 }
 
 .info {
@@ -65,7 +70,6 @@
 .card:nth-child(1) {
   bottom: -320px;
   right: 530px;
-
 }
 
 .card:nth-child(1):hover,

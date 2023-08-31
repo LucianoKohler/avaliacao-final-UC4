@@ -42,9 +42,9 @@
         <p>Antes de usar sua conta, instale o Git e o GitBash (terminal do Git), e <b>cadastre suas credenciais</b>,
             para isso, use as linhas de código a seguir: </p>
         <div class="terminal">
-            git config --global user.name "Seu nome" <span class="comment">Para cadastrar seu nome</span><br>
-            git config --global user.email "Seu email" <span class="comment">Para cadastrar seu email</span><br>
-            git config --global core.editor "SUA IDE" <span class="comment">Para mostrar em que IDE você programa
+            git config --global user.name "Seu nome" <span class="comment">#Para cadastrar seu nome</span><br>
+            git config --global user.email "Seu email" <span class="comment">#Para cadastrar seu email</span><br>
+            git config --global core.editor "Sua IDE" <span class="comment">#Para mostrar em que IDE você programa
                 (opcional)</span><br>
         </div>
 
@@ -55,11 +55,11 @@
             <li>Abra a pasta onde você quer salvar seu repositorio e escreva <span
                     class="terminal">mkdir "nome da pasta"</span> para criar uma pasta.</li>
             <li>Entre nela com o comando <span class="terminal">cd "nome da pasta"</span></li>
-            <li>Use o comando <span class="terminalt-b">git init</span> para inicializar o repositório;
+            <li>Use o comando <span class="terminal">git init</span> para inicializar o repositório;
             </li>
             <li>Por fim, use a linha <span class="terminal">code .</span> para abrir essa pasta pelo seu
-                editor de código.</li>
-            <li><b style="color: red;">NOTA IMPORTANTE:</b> Se o repositório JÁ existe no GitHub, apenas use o comando <span class="terminal">git clone "link HTTPS/SSH do projeto"</span> para puxá-lo para sua máquina</li>
+                editor de código;</li>
+            <li><b style="color: red;">NOTA IMPORTANTE:</b> Se o repositório JÁ existe no GitHub, apenas use o comando <span class="terminal">git clone "link HTTPS/SSH do projeto"</span> para puxá-lo para sua máquina.</li>
         </ul>
 
         <h1>Comandos essenciais para usar o Git</h1>
@@ -69,40 +69,40 @@
 
         <div class="terminal">
             git status <br>
-            <span class="comment">Indica em que branch você está</span> <br>
-            <span class="comment">Os arquivos modificados/adicionados/deletados</span> <br>
-            <span class="comment">E se alguma coisa precisa ser adicionada ao projeto</span> <br>
+            <span class="comment">#Indica em que branch você está</span> <br>
+            <span class="comment">#Os arquivos modificados/adicionados/deletados</span> <br>
+            <span class="comment">#E se alguma coisa precisa ser adicionada ao projeto</span> <br>
 
             <br>git add "filename ou ." <br>
-            <span class="comment">Adiciona arquivos novos da pasta para o repositório</span> <br>
+            <span class="comment">#Adiciona arquivos novos da pasta para o repositório</span> <br>
 
             <br>git restore --staged "filename ou ."<br>
-            <span class="comment">Usado para reverter o git add</span> <br>
+            <span class="comment">#Usado para reverter o git add</span> <br>
 
             <br>git branch "branchname"<br>
-            <span class="comment">Cria um branch novo</span> <br>
+            <span class="comment">#Cria um branch novo</span> <br>
 
             <br>git checkout "branchname"<br>
-            <span class="comment">Entra no branch escolhido</span> <br>
+            <span class="comment">#Entra no branch escolhido</span> <br>
 
             <br>git checkout -b "branchname"<br>
-            <span class="comment">Cria um novo branch e entra nele</span><br>
+            <span class="comment">#Cria um novo branch e entra nele</span><br>
 
             <br>git commit -m "description"<br>
-            <span class="comment">Cria uma versão do código, como um "save em um jogo" no repositório local, junto com uma descrição</span><br>
+            <span class="comment">#Cria uma versão do código, como um "save em um jogo" no repositório local, junto com uma descrição</span><br>
 
             <br>git push<br>
-            <span class="comment">Envia as novas alterações/commits do repositório local para o repositório local</span><br>
+            <span class="comment">#Envia as novas alterações/commits do repositório local para o repositório local</span><br>
 
             <br>git branch -D "branchname"<br>
-            <span class="comment">Deleta um branch escolhido</span><br>
+            <span class="comment">#Deleta um branch escolhido</span><br>
 
             <br>git fetch<br>
-            <span class="comment">Puxa as novas alterações/commits enviados ao repositório remoto para seu repositório local mas não altera seu código</span><br>
+            <span class="comment">#Puxa as novas alterações/commits enviados ao repositório remoto para seu repositório local mas não altera seu código</span><br>
 
             <br>git pull<br>
-            <span class="comment">Puxa as novas alterações/commits enviados ao repositório remoto para seu repositório local</span><br>
-            <span class="comment">E altera seu código para a versão mais recente puxada pelo comando</span>
+            <span class="comment">#Puxa as novas alterações/commits enviados ao repositório remoto para seu repositório local</span><br>
+            <span class="comment">#E altera seu código para a versão mais recente puxada pelo comando</span>
 
         </div>
 
@@ -115,7 +115,7 @@
             <li>Inicialize um agente (robozinho de SSH) com o comando <span class="terminal"> eval "$(ssh-agent -s)"</span>;</li>
             <li>Dê a chave SSH ao robozinho com a linha de código <span class="terminal">ssh-add ~/.ssh/id_ed25519</span>;</li>
             <li>Agora, utilize o comando clip para copiar para a área de transferência, sua chave SSH: <span class="terminal">clip < ~/.ssh/id_ed25519.pub</span>;</li>
-            <li>Com a chave em mãos, logue sua conta no GitHub e abra as settings > SSH and GPG keys;</li>
+            <li>Com a chave em mãos, logue sua conta no GitHub e abra suas <span class="terminal">settings > SSH and GPG keys</span>;</li>
             <li>Clique no botão de adicionar uma chave SSH, dê um nome a essa chave (ex: casa, trabalho...) para identificação. Em seguida, cole o código previamente copiado na caixa de texto grande.</li>
             <li>Por fim, use <span class="terminal">ssh -T git@github.com</span> no bash para conectar tudo e digite yes para confirmar a conexão, está feito!</li>
         </ul>
@@ -125,7 +125,7 @@
         
         <ul>
             <li>Com o arquivo pronto, abra o terminal e certifique-se de que ele está aberto na pasta dos seus arquivos;</li>
-            <li>Escreva no terminal <span class="terminal">git init</span> para inicializar um repositório Público na sua máquina;</li>
+            <li>Escreva no terminal <span class="terminal">git init</span> para inicializar um repositório na sua máquina;</li>
             <li>Digite <span class="terminal">git add .</span> para salvar arquivos novos e/ou alterações no repositório local;</li>
             <li>Em seguida, dê o clássico commit com o comando <span class="terminal">git commit -m "Descrição do commit"</span> para salvar essa versão do código no repositório local;</li>
             <li>Por fim, no menu "Source Control" no VSC, clique no botão para enviar o repositório local para o remoto;</li>
