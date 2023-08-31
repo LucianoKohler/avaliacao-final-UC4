@@ -1,3 +1,21 @@
+.flex{
+  display: flex;
+  text-align: justify;
+  gap: 50px;
+}
+
+.flex p:nth-child(2){
+  text-indent: 50px;
+}
+
+.flex h3{
+  text-align: center;
+}
+
+.flex div{
+  flex: 1;
+}
+
 .question {
   font-weight: bold;
 }
@@ -32,13 +50,12 @@
   text-align: justify;
 }
 
-.arrow {
+.info {
   font-size: 20px;
   position: relative;
   left: 440px;
   bottom: 25px;
 }
-
 
 .card h2 {
   margin: 0;
@@ -47,7 +64,8 @@
 
 .card:nth-child(1) {
   bottom: -320px;
-  right: 30px;
+  right: 530px;
+
 }
 
 .card:nth-child(1):hover,
@@ -57,5 +75,5 @@
 
 .card:nth-child(2) {
   bottom: -320px;
-  right: 530px;
+  right: 30px;
 }

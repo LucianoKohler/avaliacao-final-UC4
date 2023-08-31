@@ -21,43 +21,39 @@
             <p>Para tornar um site acessível para outros, ele precisa de uma máquina para processar sua movimentação de dados, e para isso, <b>hospedamos</b> o site.</p>
             
             <h2>Tipos de Hospedagem</h2>
-            <ul>
-                <li><h3>On-Premises</h3>
-                    <ul>
-                        <li>São hospedagens feitas diretamente na infraestrutura de quem detém o site</li>
-                        <li><b>Exemplos:</b> Servidor físico na empresa do cliente que comprou o site</li>
-                    </ul>
-                </li>
-                <li><h3>IaaS</h3>
-                    <ul>
-                        <li>Significa infraestrutura como Serviço, ou seja, o provedor da hospedagem dá a você uma ou mais máquinas virtuais, e depende de você de gerenciar elas, isso dá um pouco mais de manuseabilidade para a hospedagem e é uma boa opção se você é experiente no assunto</li>
-                        <li><b>Exemplos:</b> Amazon Web Services, Hostinger e Hostgator</li>
-                    </ul>
-                </li>
-                <li><h3>PaaS</h3>
-                    <ul>
-                        <li>Significa Plataforma como Serviço e é um serviço que disponibiliza uma plataforma de gerenciamento do site, como ferramentas de testagem e implantação, serviços de banco de dados, e muito mais, só não tendo tanta flexibilidade quanto um Iaas </li>
-                        <li><b>Exemplos:</b> Heroku e Oracle Cloud Platform</li>
-                    </ul>
-                </li>
-                <li><h3>SaaS</h3>
-                    <ul>
-                        <li>Significa Software as a Service e é o serviço de hospedagem de menor complexidade, onde o provedor da hospedagem que gere o estado do servidor, porém não dá tanta liberdade de hospedagem quanto uma ferramenta mais complexa.</li>
-                        <li><b>Exemplos:</b> Ferramentas do Google Workspace (Docs, Sheets...) ou do Microsoft Office (Word, Excel...)</li>
-                    </ul>
-                </li>
-            </ul>
+            <div class="flex">
+                <div class="host-type">
+                    <h3>On-Premises</h3>
+                    <p>São hospedagens feitas diretamente na infraestrutura de quem detém o site, eles dão um controle TOTAL da infraestrutura do projeto, porém é o mais suscetível a ataques de <i>hackers</i> já que o servidor não possui uma segurança tão desenvolvida quanto a de um serviço profissional.</p>
+                    <p><b>Exemplos:</b> Servidor físico na empresa do cliente que comprou o site</p>
+                </div>
+                <div class="host-type">
+                    <h3>IaaS</h3>
+                    <p>Significa infraestrutura como Serviço, ou seja, o provedor da hospedagem dá a você uma ou mais máquinas virtuais, e depende de você de gerenciar elas, isso dá um pouco mais de manuseabilidade para a hospedagem e é uma boa opção se você é experiente no assunto.</p>
+                    <p><b>Exemplos:</b> Amazon Web Services, Hostinger e Hostgator</p>
+                </div>
+                <div class="host-type">
+                    <h3>PaaS</h3>
+                    <p>Significa Plataforma como Serviço e é um serviço que disponibiliza uma plataforma de gerenciamento do site, como ferramentas de testagem e implantação, serviços de banco de dados, e muito mais, só não tendo tanta flexibilidade quanto um Iaas, mas ainda sim podendo suprir suas necessidades.</p>
+                    <p><b>Exemplos:</b> Heroku e Oracle Cloud Platform</p>
+                </div>
+                <div class="host-type">
+                    <h3>SaaS</h3>
+                    <p>Significa Software as a Service e é o serviço de hospedagem de menor complexidade, onde o provedor da hospedagem que gere o estado do servidor, porém não dá tanta liberdade de hospedagem quanto uma ferramenta mais complexa.</p>
+                    <p><b>Exemplos:</b> Ferramentas do Google Workspace (Docs, Sheets...) ou do Microsoft Office (Word, Excel...).</p>
+                </div>
+            </div>
             <div id="images">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Hostinger_Logo.png" alt="Logo da Hostinger" width="200">
-                <img src="https://logodownload.org/wp-content/uploads/2019/09/hostgator-logo.png" alt="Logo da Hostgator" width="200">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/2560px-Amazon_Web_Services_Logo.svg.png" alt="Logo da AWS" width="180">
-                <img src="https://1000logos.net/wp-content/uploads/2023/01/Godaddy-logo.png" alt="Logo da AWS" width="200">
-                <img src="https://logodownload.org/wp-content/uploads/2020/04/google-drive-logo-0-1.png" alt="Logo do Google Drive" width="200">
+                <img title="Hostinger" src="https://upload.wikimedia.org/wikipedia/commons/0/03/Hostinger_Logo.png" alt="Logo da Hostinger" width="200">
+                <img title="Hostgator" src="https://logodownload.org/wp-content/uploads/2019/09/hostgator-logo.png" alt="Logo da Hostgator" width="200">
+                <img title="Amazon Web Services" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/2560px-Amazon_Web_Services_Logo.svg.png" alt="Logo da AWS" width="180">
+                <img title="GoDaddy" src="https://1000logos.net/wp-content/uploads/2023/01/Godaddy-logo.png" alt="Logo da GoDaddy" width="200">
+                <img title="Google Drive" src="https://logodownload.org/wp-content/uploads/2020/04/google-drive-logo-0-1.png" alt="Logo do Google Drive" width="200">
                 <p style="width: 100%; margin: 0;"><i>Logos de famosos sites de hospedagem</i></p>
             </div>
             
             <h1>Como hospedar um site?</h1>
-            <p>Já de início, é aconselhável  desconsiderar a ideia de um servidor On-premise pois é fácil de cair em um ataque hacker sem uma equipe competente para cuidar da segurança, por isso, é mais seguro fazer uma hospedagem com os serviços vistos acima. Mas antes de escolher qualquer tipo de hospedagem, devemos pensar nos seguintes pontos:</p>
+            <p>Como visto acima, é bom desconsiderar a ideia de um servidor On-premise pois é fácil de cair em um ataque hacker sem uma equipe competente para cuidar da segurança, logo, é melhor fazer uma hospedagem com os outros serviços. Mas antes de escolher qualquer tipo de hospedagem, devemos pensar nos seguintes pontos:</p>
             <ul>
                 <li class="question">Qual dos serviços devo procurar?</li>
                 <li class="answer">Normalmente, um IaaS ou PaaS é a melhor opção já que eles possuem mais ferramentas para gerir seu software, se você não entende do assunto, procure serviços mais amigáveis aos leigos, como  <b>Hostinger</b> ou a <b>GoDaddy</b>, mas serviços para profissionais como a <b>AWS</b> e a <b>GPC</b> sempre te dão mais liberdade de uso</li>
@@ -72,7 +68,7 @@
         <div id="cards">
             <div class="card">
                 <h2>DNS</h2>
-                <span class="arrow">&#8505;</span>
+                <span class="info">&#8505;</span>
                 <p>DNS (Domain Name System) é um sistema presente na internet que traduz os IPs únicos de cada site e transforma eles em links ou domínios</p>
                 <p>Essa prática é vantajosa, pois torna o link mais memorável, já que palavras são mais fáceis de se decorar do que números, e convenhamos, quem conhece o IP mas não o link do Youtube hoje em dia?</p>
                 <ul>
@@ -83,7 +79,7 @@
             </div>
             <div class="card">
                 <h2>SEO</h2>
-                <span class="arrow">&#8505;</span>
+                <span class="info">&#8505;</span>
                 <p>SEO (Search Engine Optimization), é uma estratégia de desenvolvimento de sites para que o mesmo seja mais "famoso" que os outros, aparecendo acima deles nas pesquisas</p>
                 <p>Exemplos de otimização do motor de busca do site podem ser feitos por:</p>
                 <ul>

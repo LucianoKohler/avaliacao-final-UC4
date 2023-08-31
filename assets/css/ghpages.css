@@ -1,0 +1,56 @@
+header,
+.flex-2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.flex-2 div {
+    flex: 1;
+    text-align: justify;
+}
+
+.flex-2 h1 {
+    text-align: center;
+}
+
+.card {
+    padding: 10px 20px;
+    background-color: var(--secon);
+    color: white;
+    height: 350px;
+    width: 450px;
+    position: fixed;
+    border-radius: 15px 15px 0 0;
+    transition: .5s all ease-in-out;
+    text-align: justify;
+}
+
+.info {
+    font-size: 20px;
+    position: relative;
+    left: 440px;
+    bottom: 25px;
+}
+
+
+.card h2 {
+    margin: 0;
+    text-align: center;
+}
+
+.card:nth-child(1) {
+    bottom: -320px;
+    right: 530px;
+
+}
+
+.card:nth-child(1):hover,
+.card:nth-child(2):hover {
+    bottom: 0px;
+}
+
+.card:nth-child(2) {
+    bottom: -320px;
+    right: 30px;
+}

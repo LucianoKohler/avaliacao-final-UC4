@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/nav.css">
+    <link rel="stylesheet" href="../assets/css/ghpages.css">
     <title>Github Pages</title>
 </head>
+
 <body>
     <nav>
         <span><a href="../index.html">Home</a></span>
@@ -14,5 +17,124 @@
         <span><a href="../pages/ghpages.html">GitHub Pages</a></span>
         <span><a href="../pages/portfolio.html">Portfolio</a></span>
     </nav>
+    <div id="container">
+        <header>
+            <main>
+                <h1>GitHub Pages</h1>
+                <p>Você sabia que é possível hospedar um site <b>gratuitamente</b> usando o Github? Senão, apresento a
+                    você o <b>GitHub Pages</b>, uma ferramenta de hospedgem integrada ao Github onde você pode escolher
+                    seus repositórios no site e hospedá-los de maneira rápida e simples, descubra como hospedar seu
+                    site!</p>
+            </main>
+            <aside>
+                <img src="../assets/images/githubpages.png" alt="" height="200">
+            </aside>
+        </header>
+        <p style="text-align: center;">Mas, antes de ir para a prática, precisamos entender a diferença de um site
+            estático e um site dinâmico: </p>
+        <div class="flex-2">
+            <div>
+                <h1>Site Estático</h1>
+                <p>Sites estáticos tem um conteúdo que não muda (a não ser que você mude diretamente pelo código), e
+                    todo o processamento de informações é feito <b>na máquina do usuário</b>, a maioria dos sites é
+                    estática, podendo dar de exemplo: Portfolios, Sites de informações sobre empresas/instituições, ou
+                    álbuns de fotos online.</p>
+            </div>
+            <div>
+                <h1>Site Dinâmico</h1>
+                <p>Sites dinâmicos podem mudar seu conteúdo sem a interação do desenvolvedor e normalmente têm maior
+                    complexidade, além de um <b>lado do servidor</b>, que troca informações com o usuário em tempo real,
+                    normalmente esse servidor é feito com PHP, Node.Js ou Python, mas não se restrinja só a eles!.</p>
+            </div>
+        </div>
+        <p>Com essas informações em mente, classifique seu site como estático ou dinâmico e siga os passos dependendo da
+            classificação: </p>
+        <h1>Hospedando sites estáticos</h1>
+        <p>Sorte sua, é muito fácil!</p>
+        <ul>
+            <li>Abra o repositório a ser hospedado pelo Github;</li>
+            <li>Na barra de navegação do repositório localizada em cima do código e clique em settings/configurações;
+            </li>
+            <li>Na aba que apareceu à esquerda, clique no botão <b>Pages</b>;</li>
+            <li>Deixe a opção de dar <b>deploy</b>(veja o card na parte de baixo da página) por uma branch (valor
+                padrão), e escolha uma branch para dar deploy no seu site</li>
+            <li>Espere até que a plataforma hospede seu projeto</li>
+            <li>Clique no link gerado na parte superior da página e aproveite seu site diretamente na internet!</li>
+        </ul>
+        <h1>Hospedando sites Dinâmicos</h1>
+        <p>Quando o assunto são sites dinâmicos, a hospedagem deles via Pages é mais complicada, já que temos que
+            hospedar o lado do cliente e do servidor, para isso, usamos um robô para automatizar esse processo, processo
+            esse feito em <b>.yml</b>:</p>
+        <ul>
+            <li>Dentro do seu projeto, crie a sequência de arquivos <span
+                    class="terminal">.github/workflows/build.yml</span>;</li>
+            <li>Dentro do build.yml, cole esse código: </li>
+        </ul>
+
+            <pre class="terminal">
+name: deploy
+on:
+    push:
+        branches:
+            - main <span class="comment">###IMPORTANTE: Isso diz que o código será rodado uando houverem pushes 
+                   na main (preferivelmente coloque mais branches, nunca dê push na main)</span>
+jobs: <span class="comment">#tarefas a fazer</span>
+    deploy:
+        runs-on: ubuntu-20.04 <span class="comment">#OS do servidor que o Pages vai hospedar</span>
+        steps: <span class="comment">#indica as tecnologias a serem usadas</span>
+                - uses: actions/checkout@v2
+                - uses: actions/setup-node@v1
+                with: <span class="comment">#indica qual versão do node usar</span> 
+                    node-version: '18.x' <span class="comment">#18.0 pra cima</span>
+                - name: Build web-app
+                run: |
+                    npm ci
+                    npm run build
+                <span class="terminal">#faz a build do projeto</span>
+                - name: Deploy to gh-pages
+                uses: peaceiris/actions-gh-pages@v3
+                with:
+                    github_token: ${{ secrets.GITHUB_TOKEN }}
+                    publish_dir: ./build</pre>
+        <ul>
+            <li>Agora, no arquivo</li>
+            <li>Com as alterações feitas, acesse no seu repositório: <span class="terminal">settings>actions>general</span> e, ao fim da página:</li>
+            <ul>
+                <li>marque a checkbox <span class="terminal">Allow GitHub Actions to create and approve pull requests</span>;</li>
+                <li>Marque o radio (checkbox redonda) <span class="terminal">Read and write permissions</span></li>
+            </ul>
+            <li>Clique em save</li>
+            <li>Agora, acesse no seu repositório o menu actions e veja se o deploy foi bem sucedido</li>
+        </ul>
+    </div>
+    <div id="cards">
+        <div class="card">
+            <h2>Build e Deploy</h2>
+            <span class="info">&#8505;</span>
+            <p>Os dois são termos usados na hora de enviar o site para o público-alvo (seja o cliente ou a internet);
+            </p>
+            <ul>
+                <li><b>Build</b> (ou construção) é o ato de transformar o código fonte do seu projeto em uma versão
+                    processada que será executada pela máquina.</li>
+                <li><b>Deploy</b> (ou implantação) é o ato de pegar a build feita e, a partir dela, tornar o projeto
+                    acessível para os usuários.</li>
+            </ul>
+            <p>Juntos, eles são os dois processos que fazem o processo de pegar as informações feitas pelos
+                desenvolvedores e enviá-las de maneira funcional para quem há de usar o código.</p>
+        </div>
+        <div class="card">
+            <h2>CI e CD</h2>
+            <span class="info">&#8505;</span>
+            <p>São siglas que remetem à boas práticas feitas na área do desenvolvimento que significam:</p>
+            <ul>
+                <li><b>CI - Integração contínua</b>: Remete à continuamente integrar/unir os códigos feitos pelos devs
+                    para que não hajam incompatibilidades no projeto.</li>
+                <li><b>CD - Entrega contínua</b>: Processo de, ao unificar o sistema, buildar e dar deploy no sistema
+                    (normalmente de forma automáica) para que o cliente esteja sempre à par das atualizações feitas pela
+                    equipe de desenvolvimento</li>
+            </ul>
+        </div>
+    </div>
 </body>
+
 </html>
