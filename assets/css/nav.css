@@ -69,7 +69,7 @@ a:hover::before,
 }
 
 
-a:active {
+a:active{
     background-color: black;
     color: white;
     transition: color .15s ease, background-color .15s ease;
