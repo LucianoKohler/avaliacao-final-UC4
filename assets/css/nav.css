@@ -51,7 +51,7 @@ a {
     text-decoration: none;
 }
 
-a::before {
+nav a::before {
     content: "";
     width: 100%;
     position: absolute;
@@ -63,19 +63,19 @@ a::before {
     transition: transform .3s ease-out;
 }
 
-a:hover::before,
+nav a:hover::before,
 .nav-selected::before {
     transform: scaleX(.95);
 }
 
 
-a:active{
+nav a:active{
     background-color: black;
     color: white;
     transition: color .15s ease, background-color .15s ease;
 }
 
-a:active::before {
+nav a:active::before {
     background-color: white;
 }
 

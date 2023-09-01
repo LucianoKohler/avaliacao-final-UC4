@@ -18,35 +18,55 @@ body{
 
 #about{
     width: 100%;
-    display: flex;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     height: 100vh;
-    background: url(../images/background-start-portfolio.png) center;
+    background: url(../images/background-start-portfolio.png) center no-repeat;
+    background-size: cover;
 }
 
-.right, .left{
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+@keyframes appear {
+    0%{opacity: 0; transform: translateX(-20px);}
+    100%{opacity: 1;}
 }
 
-#about div h1{
+#about *{
+    animation: appear 1s;
+    transition: all .3s;
+}
+
+.name{
+    grid-area: 2 / 1;
+    justify-self: center;
+}
+
+.name h1{
+    text-align: left !important; 
+    color: var(--secon);
+}
+
+.medias{
+    align-self: end;
+    grid-area: 3 / 1;
+}
+
+.web-dev{
+    color: white;
+    grid-area: 2 / 2;;
+}
+
+#about h1{
+    text-transform: uppercase;
     margin: 0;
-    font-size: 50px;
+    font-size: 60px;
     text-align: center;
 }
 
 #about div p{
     margin: 0;
     text-align: center;
-}
-
-.right{
-    color: white;
-}
-
-.left h3{
-    margin: 0;
 }
 
 .medias *{
